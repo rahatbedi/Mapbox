@@ -1,3 +1,15 @@
+# Travel Map
+
+## Setup
+
+1. Copy `.env.example` to `.env.local` and set `REACT_APP_MAPBOX_TOKEN` to your Mapbox public access token.
+2. `npm install`
+3. `npm start`
+
+> On Node 17+, `npm start` and `npm test` need `NODE_OPTIONS=--openssl-legacy-provider` (react-scripts 1.x uses webpack 3).
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
