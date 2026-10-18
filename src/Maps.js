@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import ReactMabboxGL , {Layer , Feature} from "react-mapbox-gl";
- 
-const Map = ReactMabboxGL({accessToken: "pk.eyJ1IjoicmFoYXRiZWRpIiwiYSI6ImNqbGV4Y2tybTBxdm8zcXBjbms4Znpma3UifQ.0s_SXYQUkR6ZicbjhJpoNQ"});
+import ReactMapboxGL, {Layer , Feature} from "react-mapbox-gl";
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+const Map = ReactMapboxGL({accessToken: process.env.REACT_APP_MAPBOX_TOKEN});
 class Maps extends Component {
   render() {
     return (
       <div>
         <Map
+          // react-mapbox-gl's `style` is a Mapbox style URL, not a CSS object
+          // eslint-disable-next-line react/style-prop-object
           style="mapbox://styles/mapbox/streets-v9"
           center = {[-71.0589 , 42.3601]}
           zoom = {[2]}

@@ -23,12 +23,14 @@ class CityList extends Component {
  
   handleSubmit(event){
     event.preventDefault();
-    let cities = this.state.cities;
-    cities.push(this.state.city);
-    this.setState({
-      cities: cities,
+    const city = this.state.city.trim();
+    if (!city) {
+      return;
+    }
+    this.setState(prevState => ({
+      cities: prevState.cities.concat(city),
       city: ''
-    });
+    }));
   }
  
 
