@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import ReactMapboxGL, {Layer , Feature} from "react-mapbox-gl";
+import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Map = ReactMapboxGL({accessToken: process.env.REACT_APP_MAPBOX_TOKEN});
+const accessToken = import.meta.env.REACT_APP_MAPBOX_TOKEN;
+// react-mapbox-gl's CJS build sets the token on a copy of the mapbox-gl module,
+// so set it on mapbox-gl directly as well.
+mapboxgl.accessToken = accessToken;
+const Map = ReactMapboxGL({accessToken});
 class Maps extends Component {
   render() {
     return (
